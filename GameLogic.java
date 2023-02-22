@@ -1,21 +1,30 @@
 import java.util.Scanner;
 
 public class GameLogic {
-  public void playGame() {
-    // Set up game
-    Computer comp = new Computer();
-    Player playerOne = new Player();
-    Scoreboard board = new Scoreboard();
-    System.out.println(playerOne.getName());
+  private  Computer comp = new Computer();
+  private  Player playerOne = new Player();
+  private Scoreboard board = new Scoreboard();
+  private Scanner sc = new Scanner(System.in);
 
-    // Start game
+  public void playGame() {
+    System.out.println(playerOne.getName());
     board.incTurn();
-    guess();
     System.out.println(comp.getNum());
-    System.out.println(board.getCount());
+    if(guess() == true) {
+      System.out.println("You win!");
+    }
+
+    sc.close();
   }
 
-  private static void guess() {
-
+  private boolean guess() {
+    System.out.println("Input a number!");
+    
+    int number = sc.nextInt();
+    if(number == comp.getNum()) {
+      return true;
+    } else {
+      return false;  
+    }
   }
 }
