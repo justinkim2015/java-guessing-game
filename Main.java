@@ -1,9 +1,7 @@
 public class Main {
   public static void main(String[] args) {
-    Computer comp = new Computer();
-    Player playerOne = new Player();
+    GameLogic game = new GameLogic();
 
-    System.out.println(playerOne.getName());
-    System.out.println(comp.getNum());
+    game.playGame();
   }
 }
