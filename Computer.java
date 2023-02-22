@@ -1,5 +1,5 @@
 public class Computer {
-  private static int randomNumber;
+  private int randomNumber;
 
   public Computer() {
     double random = Math.random() * 100;
