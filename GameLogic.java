@@ -7,20 +7,33 @@ public class GameLogic {
   private Scanner sc = new Scanner(System.in);
 
   public void playGame() {
-    System.out.println(playerOne.getName());
     board.incTurn();
-    System.out.println(comp.getNum());
-    if(guess() == true) {
+    System.out.println("Round " + board.getCount());
+    System.out.println("-------");
+
+    System.out.println("Input a number!");
+    int number = sc.nextInt();
+
+    if(guess(number) == true) {
       System.out.println("You win!");
+      System.out.println("It took you " + board.getCount() + " turns!");
+    } else {
+      giveHint(number);
+      playGame();
     }
 
     sc.close();
   }
 
-  private boolean guess() {
-    System.out.println("Input a number!");
-    
-    int number = sc.nextInt();
+  private void giveHint(int guess) {
+    if(guess > comp.getNum()) {
+      System.out.println("It's lower! \n");
+    } else {
+      System.out.println("It's higher! \n");
+    }
+  }
+
+  private boolean guess(int number) {
     if(number == comp.getNum()) {
       return true;
     } else {
