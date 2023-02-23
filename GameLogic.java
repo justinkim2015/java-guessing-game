@@ -15,7 +15,7 @@ public class GameLogic {
     int number = sc.nextInt();
 
     if(guess(number) == true) {
-      System.out.println("You win!");
+      System.out.println("\n You win!");
       System.out.println("It took you " + board.getCount() + " turns!");
     } else {
       giveHint(number);
