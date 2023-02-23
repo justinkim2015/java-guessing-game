@@ -13,6 +13,10 @@ public class Player {
     lives -= 1;
   }
 
+  public int getLives() {
+    return lives;
+  }
+
   private void setName() {
     Scanner sc = new Scanner(System.in);
     System.out.println("What's your name?");
