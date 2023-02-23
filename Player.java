@@ -3,10 +3,20 @@ import java.util.Scanner;
 public class Player {
   private String name;
   private int lives;
+  private boolean hint;
 
   public Player() {
     setName();
     lives = 5;
+    hint = false;
+  }
+
+  public void hintGiven() {
+    hint = true;
+  }
+
+  public boolean givenHint() {
+    return hint;
   }
 
   public void decLives() {
